@@ -10,13 +10,19 @@ resource "azurerm_resource_group" "rg" {
 # Create a Storage account
 resource "azurerm_storage_account" "storage_account" {
   name                     = var.storage_account_name
-  resource_group_name      = var.resource_group_name
-  location                 = var.location
+  resource_group_name      = azurerm_resource_group.rg.name
+  location                 = var.storage_location
   account_tier             = var.tier_do_armazemento
   account_replication_type = var.tipo_de_replicacao
 
-  tags = {
-    environment = "staging"
+  tags = var.tags_squad_storage
 
-  }
+}
+
+# Create 4 Storages Containers
+resource "azurerm_storage_container" "storage_container" {
+  count = var.storage_container_qtd
+  name                  = "${var.storage_container_name}${count.index}"
+  storage_account_name  = azurerm_storage_account.storage_account.name
+  container_access_type = "private"
 }

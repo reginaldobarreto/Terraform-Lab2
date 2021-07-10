@@ -2,9 +2,13 @@
 # assim escolhendo o nome de saida do recurso independente do idioma
 
 output "grupo_de_recurso" {
-  value = azurerm_resource_group.rg.id  
+  value = azurerm_resource_group.rg.id
 }
 
 output "conta_de_armazenamento" {
-  value = azurerm_storage_account.id
+  value = azurerm_storage_account.storage_account.id
+}
+
+output "container_de_armazenamento" {
+  value = azurerm_storage_container.storage_container[0].name
 }

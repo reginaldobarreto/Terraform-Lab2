@@ -20,3 +20,18 @@ variable "tier_do_armazemento" {
 variable "tipo_de_replicacao" {
   default = "ZRS"
 }
+
+variable "tags_squad_storage" {
+  type = map(any)
+}
+
+variable "storage_container_name" {
+}
+
+variable "storage_location" {
+  default = "East US"
+}
+
+variable "storage_container_qtd" {
+  default = 1
+}
