@@ -4,3 +4,7 @@
 output "grupo_de_recurso" {
   value = azurerm_resource_group.rg.id  
 }
+
+output "conta_de_armazenamento" {
+  value = azurerm_storage_account.id
+}

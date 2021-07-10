@@ -8,3 +8,15 @@ variable "resource_group_name" {
 variable "location" {
   default = "East US"
 }
+
+variable "storage_account_name" {
+  default = "barretolab2"
+}
+
+variable "tier_do_armazemento" {
+  default = "Standard"
+}
+
+variable "tipo_de_replicacao" {
+  default = "ZRS"
+}
