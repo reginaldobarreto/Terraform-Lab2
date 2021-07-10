@@ -26,3 +26,10 @@ resource "azurerm_storage_container" "storage_container" {
   storage_account_name  = azurerm_storage_account.storage_account.name
   container_access_type = "private"
 }
+
+# Create 3 Storages File Shares
+resource "azurerm_storage_share" "storage_share" {
+  name                 = var.storage_share_name
+  storage_account_name = azurerm_storage_account.example.name
+  quota                = 50
+}

@@ -13,3 +13,4 @@ tipo_de_replicacao = "ZRS"
 storage_location = "Brazil South"
 storage_container_qtd = 4
 storage_container_name = "barretolabs"
+storage_share_name = "barretoterraformlab2"

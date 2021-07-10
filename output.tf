@@ -12,3 +12,7 @@ output "conta_de_armazenamento" {
 output "container_de_armazenamento" {
   value = azurerm_storage_container.storage_container[0].name
 }
+
+output "storage_share" {
+  value = azurerm_storage_share.storage_share[0].name
+}

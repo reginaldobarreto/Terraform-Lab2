@@ -35,3 +35,7 @@ variable "storage_location" {
 variable "storage_container_qtd" {
   default = 1
 }
+
+variable "storage_share_name" {
+  default = "umestoragequalquer"
+}
