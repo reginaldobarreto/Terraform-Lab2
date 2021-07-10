@@ -39,3 +39,11 @@ variable "storage_container_qtd" {
 variable "storage_share_name" {
   default = "umestoragequalquer"
 }
+
+variable "storage_fileshares_qtd" {
+  default = 1
+}
+
+variable "storage_fileshares_quota" {
+  default = 5
+}

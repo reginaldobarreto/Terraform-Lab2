@@ -21,7 +21,7 @@ resource "azurerm_storage_account" "storage_account" {
 
 # Create 4 Storages Containers
 resource "azurerm_storage_container" "storage_container" {
-  count = var.storage_container_qtd
+  count                 = var.storage_container_qtd
   name                  = "${var.storage_container_name}${count.index}"
   storage_account_name  = azurerm_storage_account.storage_account.name
   container_access_type = "private"
@@ -29,7 +29,8 @@ resource "azurerm_storage_container" "storage_container" {
 
 # Create 3 Storages File Shares
 resource "azurerm_storage_share" "storage_share" {
-  name                 = var.storage_share_name
-  storage_account_name = azurerm_storage_account.example.name
-  quota                = 50
+  count                = var.storage_fileshares_qtd
+  name                 = "${var.storage_share_name}${count.index}"
+  storage_account_name = azurerm_storage_account.storage_account.name
+  quota                = var.storage_fileshares_quota
 }
